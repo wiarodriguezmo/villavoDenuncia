@@ -1,0 +1,25 @@
+<div class="row" id="latestContent" ng-controller="latestContentsCtrl as ctrl" >
+  <h1>Principales denuncias</h1>
+  <div ng-if="ctrl.inProcess" loading>...CARGANDO...</div>
+  <div id="complaintLatest" ng-init="ctrl.moreContents()" ng-if="!ctrl.inProcess" load-more="ctrl.moreContents()">
+    <div ng-repeat="complaint in ctrl.complaints | orderBy:'-creationDate'" ng-if="complaint.state !=0">
+      <div class="row complaint" ng-click="ctrl.view(complaint)">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1">
+            <h4>{{complaint.numVisits}}1200</h4>
+          </div>
+            <div class="col-xs-10 col-sm-8 col-md-7">
+              <h4>{{complaint.title}}</h4>
+            </div>
+          <div class="col-xs-12 col-sm-2 col-md-3">
+            <small>{{complaint.creationDate | date:'medium'}}</small>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1">
+            <i ng-show="complaint.typeContent%2==1" class="fa fa-camera-retro"></i>
+            <i ng-show="complaint.typeContent>1" class="fa fa-youtube" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+html, body{
+  height:100%;
+  overflow: hidden;
+}
+#home {
+  background-color: gray;
+}
+.full {
+  height: 100%;
+}
+#createContent{
+  height: 60%;
+  min-height: 350px;
+  padding: 1em;
+  background-color: white
+}
+.has-error .form-control {
+  border: 2px solid #b90000;
+}
+.complaint {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.row {
+  margin: 0
+}
+#latest{
+  height: 100%;
+}
+#main {
+  height: 50%;
+}
+
+#latestContent {
+  height: 100%;
+}
+#complaintLatest{
+  max-height: calc(100% - 15%);
+  overflow-y: auto;
+  overflow-x: hidden
+}
+/*
+
+
+
+*/
